@@ -30,4 +30,4 @@ class CreateBaseTables < ActiveRecord::Migration
 
   end
 
-end
+endbundle
