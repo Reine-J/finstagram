@@ -103,3 +103,11 @@ get '/logout' do
   session[:user_id] = nil
   redirect to('/')
 end
+
+get '/profile' do 
+  if current_user
+   erb(:profile) 
+  else 
+    redirect to('/login')
+  end
+end 
