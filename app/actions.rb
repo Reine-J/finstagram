@@ -18,10 +18,6 @@ get '/login' do #when a get request comes in to login
   erb(:login) #render app/views/login.erb
 end 
 
-get '/finstagram_posts/:id' do
-  @finstagram_post = FinstagramPost.find(params[:id])   # find the finstagram post with the ID from the URL
-  erb(:"finstagram_posts/show")               # render app/views/finstagram_posts/show.erb
-end
 
 post '/comments' do
   # point values from params to variables
@@ -70,6 +66,11 @@ end
 
 get '/finstagram_posts/new' do
   erb(:"finstagram_posts/new")
+end
+
+get '/finstagram_posts/:id' do
+  @finstagram_post = FinstagramPost.find(params[:id])   # find the finstagram post with the ID from the URL
+  erb(:"finstagram_posts/show")               # render app/views/finstagram_posts/show.erb
 end
 
 post '/finstagram_posts' do
